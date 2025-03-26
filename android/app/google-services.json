@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "407001807193",
+    "project_id": "quickmeds-e209d",
+    "storage_bucket": "quickmeds-e209d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:407001807193:android:8a55f18c3a08c076e1f448",
+        "android_client_info": {
+          "package_name": "com.example.appinterface"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBbmgs8xNqOF8d_qc9T8rq8y9rI1YrI8vE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
