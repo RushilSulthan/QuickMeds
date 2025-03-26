@@ -1,3 +1,4 @@
+import 'package:appinterface/Todo/todo_list.dart';
 import 'package:appinterface/global_bloc.dart';
 import 'package:appinterface/medicine_details/medicine_details.dart';
 import 'package:appinterface/models/medicine.dart';
@@ -61,9 +62,8 @@ class FirstPage extends StatelessWidget {
                   ),
                 );
               }),
-
           // Add BottomContainer to Stack
-          const Align(
+          Align(
             alignment: Alignment.bottomCenter,
             child: Padding(
               padding: EdgeInsets.only(bottom: 50.0), // Adjust bottom spacing
@@ -72,28 +72,49 @@ class FirstPage extends StatelessWidget {
           ),
         ],
       ),
-      floatingActionButton: InkResponse(
-        onTap: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-              builder: (context) => const Page1(),
+      floatingActionButton: Padding(
+        padding: const EdgeInsets.only(left: 30),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: [
+            FloatingActionButton(
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => TodoList()));
+              },
+              backgroundColor: Colors.purple,
+              child: Icon(
+                Icons.edit_note_rounded,
+                size: 40,
+              ),
             ),
-          );
-        },
-        child: Card(
-          color: Colors.purple,
-          shape: BeveledRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: const Padding(
-            padding: EdgeInsets.all(10.0), // Adjusted padding for better size
-            child: Icon(
-              Icons.add_outlined,
-              size: 50,
-              color: Colors.white70,
+            Expanded(child: Container()),
+            InkResponse(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const Page1(),
+                  ),
+                );
+              },
+              child: Card(
+                color: Colors.purple,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                child: const Padding(
+                  padding:
+                      EdgeInsets.all(10.0), // Adjusted padding for better size
+                  child: Icon(
+                    Icons.add_outlined,
+                    size: 50,
+                    color: Colors.white70,
+                  ),
+                ),
+              ),
             ),
-          ),
+          ],
         ),
       ),
     );
